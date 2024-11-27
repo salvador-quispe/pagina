@@ -1,0 +1,193 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4a90e2;
+  }
+  .purpose-section {
+    background-color: #e0f7fa;
+    padding: 40px 0;
+  }
+  .ods-relations {
+    background-color: #f1f8e9;
+    padding: 40px 0;
+  }
+  .image-gallery {
+    background-color: #ffffff;
+    padding: 40px 0;
+  }
+  .image-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+  }
+  .image-box img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  .image-box img:hover {
+    transform: scale(1.05);
+  }
+  .image-box .caption {
+    padding: 10px;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  .interactive-options {
+    background-color: #ede7f6;
+    padding: 40px 0;
+  }
+  .option-buttons .btn {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  @media (max-width: 768px) {
+    .image-gallery .row {
+      display: block;
+    }
+  }
+/* Contenedor uniforme para todas las imágenes */
+.image-container {
+    width: 100%;           /* Ocupa el ancho total del contenedor */
+    height: 200px;         /* Fija la altura de las imágenes */
+    overflow: hidden;      /* Recorta cualquier desbordamiento de las imágenes */
+    display: flex;         /* Centra las imágenes horizontal y verticalmente */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Imágenes dentro del contenedor */
+.image-container img {
+    width: auto;           /* Mantiene la proporción original del ancho */
+    height: 100%;          /* Ajusta la altura para llenar el contenedor */
+    object-fit: cover;     /* Asegura que las imágenes se adapten sin deformarse */
+    object-position: center; /* Centra la imagen en el recorte */
+}
+
+/* Estilos generales */
+.caption {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+
+
+.mision {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 50px;
+  padding-bottom: 70px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.container .box {
+  position: relative;
+  width: 320px;
+  background: #fff;
+  padding: 100px 40px 60px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, .1);
+}
+
+.container .box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--dark-color);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.5s;
+}
+
+.container .box:hover::before {
+  transform: scaleY(1);
+  transform-origin: bottom;
+  transition: transform 0.5s;
+}
+
+.container .box h2 {
+  position: absolute;
+  left: 40px;
+  top: 60px;
+  font-size: 4em;
+  font-weight: 800;
+  z-index: 1;
+  opacity: 0.1;
+  transition: 0.5s;
+}
+
+.container .box:hover h2 {
+  opacity: 1;
+  color: #fff;
+  transform: translateY(-40px);
+}
+
+.container .box h3 {
+  position: relative;
+  font-size: 1.5em;
+  z-index: 2;
+  color: #333;
+  transition: 0.5s;
+}
+
+.container .box p {
+  position: relative;
+  z-index: 2;
+  color: #555;
+  transition: 0.5s;
+}
+
+.container .box:hover h3,
+.container .box:hover p {
+  color: #fff;
+}
+
+@media(max-width:991px) {
+  .row {
+      grid-template-columns: 1fr;
+      grid-gap: 50px;
+  }
+
+  .row .contentWrapper {
+      padding-left: 0;
+  }
+
+  .mision {
+      flex-direction: column;
+  }
+
+}
+
+@media(max-width: 575px) {
+  .row .contentWrapper span.textWrapper {
+      font-size: 18px;
+  }
+
+  .row .contentWrapper h2 {
+      font-size: 25px;
+  }
+
+  .row .contentWrapper p {
+      font-size: 15px;
+      line-height: 22px;
+  }
+}
